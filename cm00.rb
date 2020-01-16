@@ -7,11 +7,12 @@ puts "Welcome to Ada Developers Academy's Computer Candy Machine!"
 puts "(All candy provided is virtual.)"
 
 print "How much money do ya got? > $"
-m = gets.chomp.to_f #prompting user for input
+money = gets.chomp.to_f #prompting user for input
 
-puts "$#{m} that's all?"
+puts "$#{money} that's all?"
 puts "Well, lemme tell ya what we got here."
 puts ""
+
 choices = Hash.new() #creating a new hash 
 choices["a"] = 0.65 #adding to my hash
 choices["b"] = 0.50
@@ -27,15 +28,15 @@ puts "D $0.65 Peanut Butter Cup"
 puts "E $0.55 Juicy Fruit Gum"
 puts ""
 puts "So, What'll ya have? >" #prompting user to choose
-choice= gets.chomp.downcase
+choice = gets.chomp.downcase
 
 #if statement basically checks if the amount of money is more than the candy choice that got picked
-if m >= choices["a"] || m >= choices["b"] || m >= choices["c"] || m >= choices["d"] || m >= choices["e"]
-puts "Thanks for purchasing candy through us."
-puts "Please take your candy, and your $#{m-choices[choice]} change!"
+if money >= choices["a"] || money >= choices["b"] || money >= choices["c"] || money >= choices["d"] || money >= choices["e"]
+  puts "Thanks for purchasing candy through us."
+  puts "Please take your candy, and your $#{money-choices[choice]} change!"
 
 #if money is less than the choice 
 
 else 
-puts "You're broke. Take your $#{m} and go elsewhere."
+  puts "You're broke. Take your $#{money} and go elsewhere."
 end
